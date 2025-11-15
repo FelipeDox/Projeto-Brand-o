@@ -1,5 +1,11 @@
 <?php
 
-echo "<h0>ADM: @felipe.bslv </h0>";
-echo "<p>Direitos reservados &copy; 2026</p>";
 ?>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; <?php echo date("Y"); ?> Soluções Solares. Todos os direitos reservados.</p>
+        
+    </footer>
+</body>
+</html>
