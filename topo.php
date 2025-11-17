@@ -18,10 +18,7 @@
 <body>
     <header>
         <h1>Seu Futuro com Sol: Economia Garantida na Conta de Luz.</h1>
-        <nav>
-            <a href="home_page.php">Início</a>
-            <a href="pages/quemsomos.php">Quem Somos</a>
-        </nav>
+       
     </header>
     <main>
         <div class="container">
