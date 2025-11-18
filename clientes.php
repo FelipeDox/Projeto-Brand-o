@@ -1,23 +1,31 @@
 <?php
-// PHP: Definição dos dados que seriam buscados de um banco de dados real
+// clientes.php
+
+// PHP: Definição dos dados (simulando uma busca no banco de dados)
 $clientes_ativos = [
     [
         'nome' => 'Residencial Jardins',
         'cidade' => 'João Pessoa, PB',
         'capacidade' => '10 kWp',
-        'link' => '#portal-esperanca'
+        'link' => '#'
     ],
     [
         'nome' => 'Fazenda Alegria',
         'cidade' => 'Campina Grande, PB',
         'capacidade' => '50 kWp',
-        'link' => '#portal-alegria'
+        'link' => '#'
     ],
     [
         'nome' => 'Pousada Sol Nascente',
         'cidade' => 'Pipa, RN',
         'capacidade' => '25 kWp',
-        'link' => '#portal-sol'
+        'link' => '#'
+    ],
+    [
+        'nome' => 'Comércio Central',
+        'cidade' => 'Natal, RN',
+        'capacidade' => '15 kWp',
+        'link' => '#'
     ]
 ];
 
@@ -30,7 +38,7 @@ echo "<p>Conheça a lista de alguns de nossos principais projetos e clientes que
     // PHP: Loop para exibir cada cliente como um cartão HTML
     foreach ($clientes_ativos as $cliente) {
     ?>
-    
+
     <div class="cliente-card">
         <h4><?php echo htmlspecialchars($cliente['nome']); ?></h4>
         <p>📍 **Local:** <?php echo htmlspecialchars($cliente['cidade']); ?></p>
@@ -39,7 +47,7 @@ echo "<p>Conheça a lista de alguns de nossos principais projetos e clientes que
     </div>
 
     <?php
-    } 
+    }
     ?>
 </div>
 
