@@ -1,27 +1,23 @@
 <?php
-echo "<h1>Fale Conosco</h1>";
-echo "<p>Entre em contato conosco através do email: contato@exemplo.com</p>";
+// faleconosco.php
+// Página que exibe o formulário de contato
+
+echo "<h1>📧 Fale Conosco</h1>";
+echo "<p>Preencha o formulário abaixo ou entre em contato diretamente através do email: <strong>contato@exemplo.com</strong>.</p>";
 ?>
 
-<form action="enviar-form.php" method="post">
-    <label>Nome:</label>
-    <input type="text" name="nome" required><br><br>
-    <label>Email:</label>
-    <input type="email" name="email" required><br><br>
-    <label>Mensagem:</label><br>
-    <textarea name="mensagem" rows="5" cols="30" required></textarea><br><br>
-    <label>Telefone:</label>
-    <input type="tel" name="telefone" required><br><br>
-    <input type="submit" value="Enviar">
+<form action="envia-form.php" method="post">
+    <label for="nome">Nome:</label>
+    <input type="text" id="nome" name="nome" required>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required>
+
+    <label for="telefone">Telefone:</label>
+    <input type="tel" id="telefone" name="telefone" required>
+
+    <label for="mensagem">Mensagem:</label>
+    <textarea id="mensagem" name="mensagem" rows="5" required></textarea>
+
+    <input type="submit" value="Enviar Mensagem">
 </form>
-<?php
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $nome = htmlspecialchars($_POST['nome']);
-    $email = htmlspecialchars($_POST['email']);
-    $telefone = htmlspecialchars($_POST['telefone']);
-    $mensagem = htmlspecialchars($_POST['mensagem']);
-
-    echo "<h2>Obrigado por entrar em contato, $nome!</h2>";
-    echo "<p>Recebemos sua mensagem e entraremos em contato através do email: $email ou telefone: $telefone em breve.</p>";
-}
-?>
