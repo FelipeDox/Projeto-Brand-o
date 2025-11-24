@@ -7,6 +7,8 @@
         <li><a href="?pg=quemsomos">Quem Somos</a></li>
         <li><a href="?pg=clientes">Clientes</a></li>
         <li><a href="?pg=faleconosco">Fale Conosco</a></li>
+        <li><a href="?pg=fornecedores">Fornecedores</a></li>
+        <li><a href="?pg=tipodeservico">Serviços</a></li>
     </ul>
 </nav>
 
@@ -45,3 +47,4 @@
         color: #000;
     }
 </style>
+
