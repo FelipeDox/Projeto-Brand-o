@@ -26,11 +26,11 @@ echo "<a href='fornecedores-form.php'>Cadastrar Fornecedor</a>";
     <?php if (count($fornecedores) > 0): ?>
         <?php foreach ($fornecedores as $fornecedor): ?>
             <li>
-            Nome: <?= $fornecedor['nome']?><br>
-            E-mail: <?= $fornecedor['email']?><br>
-            Telefone: <?= $fornecedor['telefone']?><br>
+            Nome: <?= $fornecedor['nomef']?><br>
+            E-mail: <?= $fornecedor['emailf']?><br>
+            Telefone: <?= $fornecedor['telefonef']?><br>
             Tipo de serviço: <?= $fornecedor['tipodeservico']?><br>
-            Mensagem: <?= $fornecedor['mensagem']?><br>
+            Mensagem: <?= $fornecedor['mensagemf']?><br>
             </li>
         <?php endforeach; ?>
     <?php else: ?>
