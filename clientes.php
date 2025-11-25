@@ -7,25 +7,25 @@ $clientes_ativos = [
         'nome' => 'Residencial Jardins',
         'cidade' => 'João Pessoa, PB',
         'capacidade' => '10 kWp',
-        'link' => '#'
+       
     ],
     [
         'nome' => 'Fazenda Alegria',
         'cidade' => 'Campina Grande, PB',
         'capacidade' => '50 kWp',
-        'link' => '#'
+        
     ],
     [
         'nome' => 'Pousada Sol Nascente',
         'cidade' => 'Pipa, RN',
         'capacidade' => '25 kWp',
-        'link' => '#'
+       
     ],
     [
         'nome' => 'Comércio Central',
         'cidade' => 'Natal, RN',
         'capacidade' => '15 kWp',
-        'link' => '#'
+        
     ]
 ];
 
