@@ -43,7 +43,6 @@ echo "<p>Conheça a lista de alguns de nossos principais projetos e clientes que
         <h4><?php echo htmlspecialchars($cliente['nome']); ?></h4>
         <p>📍 Local: <?php echo htmlspecialchars($cliente['cidade']); ?></p>
         <p>🔋 Potência Instalada:<span class="potencia"><?php echo htmlspecialchars($cliente['capacidade']); ?></span></p>
-        <a href="<?php echo htmlspecialchars($cliente['link']); ?>" class="btn-portal">Ver Detalhes do Projeto</a>
     </div>
 
     <?php
