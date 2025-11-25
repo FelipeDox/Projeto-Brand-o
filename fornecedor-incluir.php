@@ -5,7 +5,7 @@
 // Verifica se o método é POST para garantir que o formulário foi enviado
 if ($_SERVER["REQUEST_METHOD"] != "POST") {
     // Redireciona de volta ou exibe uma mensagem de erro se o acesso for direto
-    header("Location: ?pg=fornecedores");
+    header("Location: ?pg=fornecedores-form");
     exit();
 }
 
