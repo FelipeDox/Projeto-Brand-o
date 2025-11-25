@@ -60,8 +60,8 @@ include_once "menu.php";
 if ($sucesso !== false) {
     // Bloco de SUCESSO
     echo "<h2>🎉 Contato Enviado com Sucesso!</h2>";
-    echo "<p style='color: green; font-weight: bold;'>✅ Obrigado pelo contato, **$nome**!</p>";
-    echo "<p>Recebemos sua mensagem: **'$mensagem'**. Entraremos em contato através do email: **$email** ou telefone: **$telefone** em breve.</p>";
+    echo "<p style='color: green; font-weight: bold;'>✅ Obrigado pelo contato, $nome!</p>";
+    echo "<p>Recebemos sua mensagem: '$mensagem'. Entraremos em contato através do email: $email ou telefone: $telefone em breve.</p>";
     echo '<a href="?pg=menu" class="btn">Voltar ao Menu</a>';
 
 } else {
