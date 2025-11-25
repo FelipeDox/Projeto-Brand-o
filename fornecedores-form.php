@@ -6,7 +6,7 @@ echo "<h1>📧 Fale Conosco</h1>";
 echo "<p>Preencha o formulário abaixo ou entre em contato diretamente através do email: <strong>contato@exemplo.com</strong>.</p>";
 ?>
 
-<form action="envia-form.php" method="post">
+<form action="fornecedor-incluir.php" method="post">
     <label for="nome">Nome:</label>
     <input type="text" id="nome" name="nomef" required>
 
