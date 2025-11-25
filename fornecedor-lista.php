@@ -1,6 +1,6 @@
 <?php
 
-$fornecedor_json = "fornecedor.json";
+$fornecedor_json = "fornecedores.json";
 
 // Verifica se o arquivo existe e o lê
 if (file_exists($fornecedor_json)) {
