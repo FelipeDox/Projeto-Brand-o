@@ -1,8 +1,8 @@
 <?php
-// faleconosco.php
+// fornecedores.php
 // Página que exibe o formulário de contato
 
-echo "<h1>📧 Fale Conosco</h1>";
+echo "<h1>📧 Seja nosso fornecedor!</h1>";
 echo "<p>Preencha o formulário abaixo ou entre em contato diretamente através do email: <strong>contato@exemplo.com</strong>.</p>";
 ?>
 

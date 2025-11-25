@@ -1,5 +1,5 @@
 <?php
-// envia-form.php
+// fornecedores-form.php
 // Processa o formulário de contato e salva os dados em um arquivo JSON.
 
 // Verifica se o método é POST para garantir que o formulário foi enviado
