@@ -31,7 +31,7 @@ echo "<p>Bem-vindo ao painel de controle. Aqui você pode visualizar o desempenh
 
 <div style="text-align: center; margin-top: 30px; padding: 15px; background-color: #fff3e0; border-radius: 8px; border: 1px solid #ffe0b2;">
     <p style="font-size: 1.2em; font-weight: bold; color: #ff9800;">
-        ✅ Status Geral: **<?php echo $status_sistema; ?>**
+        ✅ Status Geral: <?php echo $status_sistema; ?>
     </p>
     <small>Última atualização: <?php echo $ultima_atualizacao; ?></small>
 </div>
