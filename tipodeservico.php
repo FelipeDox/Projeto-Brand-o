@@ -1,14 +1,14 @@
 <?php
 
     echo "<p>Qual(is) serviço(s) deseja?</p>";
-    echo "<h3>- Orçamento</h3>";
-    echo "<h3>- Manutenção</h3>";
-    echo "<h3>- Instalação</h3>";
-    echo "<h3>- Limpeza</h3>";
-    echo "<h3>- Específico</h3>";
+    echo "<h2>- Orçamento</h2>";
+    echo "<h2>- Manutenção</h2>";
+    echo "<h2>- Instalação</h2>";
+    echo "<h2>- Limpeza</h2>";
+    echo "<h2>- Específico</h2>";
 
-    echo "<h2>Caso seja novo cliente, preencha o formulário abaixo, para que possamos entrar em contrato.</h2>";
-    echo "<h2>Se tem sido nosso cliente, por favor, entre em contato conosco.</h2>"
+    echo "<h3>Caso seja novo cliente, preencha o formulário abaixo, para que possamos entrar em contrato.</h3>";
+    echo "<h3>Se tem sido nosso cliente, por favor, entre em contato conosco.</h3>"
 ?>
 
 
