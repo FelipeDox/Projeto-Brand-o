@@ -17,6 +17,7 @@ $nome = htmlspecialchars(trim($_POST['nomef'] ?? ''));
 $email = htmlspecialchars(trim($_POST['emailf'] ?? ''));
 $mensagem = htmlspecialchars(trim($_POST['mensagemf'] ?? ''));
 $telefone = htmlspecialchars(trim($_POST['telefonef'] ?? ''));
+$tipodeservico = htmlspecialchars(trim($_POST['tipodeservico'] ?? ''));
 
 // Verificação simples
 if (empty($nome) || empty($email) || empty($mensagem) || empty($telefone)) {
