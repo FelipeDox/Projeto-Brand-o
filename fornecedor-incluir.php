@@ -42,7 +42,8 @@ $novo_contato = [
     'nome' => $nome,
     'email' => $email,
     'telefone' => $telefone,
-    'Tipo de Serviço' => $mensagem
+    'Tipo de Serviço' => $tipodeservico,
+    'mensagem' => $mensagem
 ];
 
 // 5. Adiciona o novo contato ao array
