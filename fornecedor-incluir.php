@@ -62,13 +62,13 @@ if ($sucesso !== false) {
     echo "<h2>🎉 Contato Enviado com Sucesso!</h2>";
     echo "<p style='color: green; font-weight: bold;'>✅ Obrigado pelo contato, $nome!</p>";
     echo "<p>Recebemos sua mensagem: '$mensagem'. Entraremos em contato através do email: $email ou telefone: $telefone em breve.</p>";
-    echo '<a href="?pg=menu" class="btn">Voltar ao Menu</a>';
+    echo '<a href="?pg=index" class="btn">Voltar ao Menu</a>';
 
 } else {
     // Bloco de FALHA
     echo "<h2>😢 Erro ao Enviar</h2>";
     echo "<p style='color: red; font-weight: bold;'>❌ Erro ao enviar mensagem. Por favor, tente novamente mais tarde.</p>";
-    echo '<a href="?pg=menu" class="btn">Voltar ao Menu</a>';
+    echo '<a href="?pg=index" class="btn">Voltar ao Menu</a>';
 }
 
 include_once "rodape.php";
