@@ -30,6 +30,7 @@ echo "<a href='fornecedores-form.php'>Cadastrar Fornecedor</a>";
             E-mail: <?= $fornecedor['email']?><br>
             Telefone: <?= $fornecedor['telefone']?><br>
             Tipo de serviço: <?= $fornecedor['tipodeservico']?><br>
+            Mensagem: <?= $fornecedor['mensagem']?><br>
             </li>
         <?php endforeach; ?>
     <?php else: ?>
