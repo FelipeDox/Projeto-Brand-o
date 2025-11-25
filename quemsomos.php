@@ -13,10 +13,10 @@
 <section style="margin-top: 20px;">
     <h3>🎯 Valores:</h3>
     <ul style="list-style-type: '👉 '; padding-left: 20px;">
-        <li>**Qualidade:** Utilização de placas e inversores certificados e de primeira linha.</li>
-        <li>**Transparência:** Orçamentos claros, prazos realistas e sem surpresas.</li>
-        <li>**Sustentabilidade:** Compromisso com o meio ambiente e a geração de energia limpa.</li>
-        <li>**Comprometimento:** Suporte total desde o projeto até a instalação e pós-venda.</li>
+        <li>Qualidade: Utilização de placas e inversores certificados e de primeira linha.</li>
+        <li>Transparência: Orçamentos claros, prazos realistas e sem surpresas.</li>
+        <li>Sustentabilidade: Compromisso com o meio ambiente e a geração de energia limpa.</li>
+        <li>Comprometimento: Suporte total desde o projeto até a instalação e pós-venda.</li>
     </ul>
 </section>
 
