@@ -12,7 +12,7 @@ if (file_exists($fornecedor_json)) {
 } else {
     // Se o arquivo não existe, inicializa a lista como vazia e pode emitir um aviso
     $fornecedores = [];
-    echo "<p>Aviso: O arquivo 'fornecedor.json' não foi encontrado.</p>";
+    echo "<p>Aviso: O arquivo 'fornecedores.json' não foi encontrado.</p>";
 }
 
 echo "<h1>Lista de Fornecedores</h1>"; // CORRIGIDO: Era "clientes"
