@@ -1,98 +1,22 @@
 <?php
-// clientes.php
-
-// PHP: Definição dos dados (simulando uma busca no banco de dados)
-$clientes_ativos = [
-    [
-        'nome' => 'Residencial Jardins',
-        'cidade' => 'João Pessoa, PB',
-        'capacidade' => '10 kWp',
-       
-    ],
-    [
-        'nome' => 'Fazenda Alegria',
-        'cidade' => 'Campina Grande, PB',
-        'capacidade' => '50 kWp',
-        
-    ],
-    [
-        'nome' => 'Pousada Sol Nascente',
-        'cidade' => 'Pipa, RN',
-        'capacidade' => '25 kWp',
-       
-    ],
-    [
-        'nome' => 'Comércio Central',
-        'cidade' => 'Natal, RN',
-        'capacidade' => '15 kWp',
-        
-    ]
+$clientes = [
+    ['nome' => 'Residencial Jardins', 'cidade' => 'João Pessoa, PB', 'cap' => '10 kWp'],
+    ['nome' => 'Fazenda Alegria', 'cidade' => 'Campina Grande, PB', 'cap' => '50 kWp'],
+    ['nome' => 'Pousada Sol Nascente', 'cidade' => 'Pipa, RN', 'cap' => '25 kWp'],
+    ['nome' => 'Comércio Central', 'cidade' => 'Natal, RN', 'cap' => '15 kWp']
 ];
-
-echo "<h3>🤝 Nossos Clientes Satisfeitos</h3>";
-echo "<p>Conheça a lista de alguns de nossos principais projetos e clientes que já estão economizando e gerando energia limpa.</p>";
 ?>
 
-<div class="clientes-grid">
-    <?php
-    // PHP: Loop para exibir cada cliente como um cartão HTML
-    foreach ($clientes_ativos as $cliente) {
-    ?>
+<h2>🤝 Nossos Clientes</h2>
+<p>Projetos entregues gerando economia real.</p>
 
-    <div class="cliente-card">
-        <h4><?php echo htmlspecialchars($cliente['nome']); ?></h4>
-        <p>📍 Local: <?php echo htmlspecialchars($cliente['cidade']); ?></p>
-        <p>🔋 Potência Instalada:<span class="potencia"><?php echo htmlspecialchars($cliente['capacidade']); ?></span></p>
+<div class="grid-cards">
+    <?php foreach ($clientes as $c): ?>
+    <div class="card">
+        <h3 style="color: #ff9900;"><?php echo $c['nome']; ?></h3>
+        <p>📍 <?php echo $c['cidade']; ?></p>
+        <hr style="border:0; border-top:1px solid #eee;">
+        <p>🔋 Potência: <strong><?php echo $c['cap']; ?></strong></p>
     </div>
-
-    <?php
-    }
-    ?>
+    <?php endforeach; ?>
 </div>
-
-<style>
-    .clientes-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        gap: 20px;
-        margin-top: 30px;
-    }
-    .cliente-card {
-        background-color: #f7f9fc;
-        border: 1px solid #dcdfe4;
-        border-radius: 8px;
-        padding: 20px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-        transition: transform 0.2s;
-    }
-    .cliente-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
-    }
-    .cliente-card h4 {
-        color: #007bff;
-        margin-top: 0;
-        border-bottom: 2px solid #e9ecef;
-        padding-bottom: 10px;
-        margin-bottom: 15px;
-    }
-    .cliente-card .potencia {
-        font-weight: bold;
-        color: #28a745;
-    }
-    .btn-portal {
-        display: inline-block;
-        margin-top: 15px;
-        padding: 8px 15px;
-        background-color: #28a745;
-        color: white;
-        text-decoration: none;
-        border-radius: 5px;
-        font-size: 0.9em;
-        transition: background-color 0.2s;
-    }
-    .btn-portal:hover {
-        background-color: #1e7e34;
-    }
-</style>
-
