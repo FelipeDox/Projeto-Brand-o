@@ -1,31 +1,53 @@
 <?php
-
-    echo "<p>Qual(is) serviço(s) deseja?</p>";
-    echo "<h2>- Orçamento</h2>";
-    echo "<h2>- Manutenção</h2>";
-    echo "<h2>- Instalação</h2>";
-    echo "<h2>- Limpeza</h2>";
-    echo "<h2>- Específico</h2>";
-
-    echo "<h3>Caso seja novo cliente, preencha o formulário abaixo, para que possamos entrar em contrato.</h3>";
-    echo "<h3>Se tem sido nosso cliente, por favor, entre em contato conosco.</h3>"
+$msg = "";
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $servico = [
+        'cliente' => $_POST['nomecliente'],
+        'telefone' => $_POST['telefoneservico'],
+        'local' => $_POST['localizacao'],
+        'tipo' => $_POST['servicco']
+    ];
+    // Salvar num arquivo JSON específico para serviços
+    $arquivo = 'servicos_solicitados.json';
+    $atuais = file_exists($arquivo) ? json_decode(file_get_contents($arquivo), true) : [];
+    if(!is_array($atuais)) $atuais = [];
+    $atuais[] = $servico;
+    file_put_contents($arquivo, json_encode($atuais, JSON_PRETTY_PRINT));
+    
+    $msg = "<div class='alert success'>✅ Solicitação de serviço enviada!</div>";
+}
 ?>
 
+<h1>🛠️ Solicitação de Serviços</h1>
+<p>Escolha o serviço que você precisa:</p>
 
+<div class="grid-cards" style="grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); margin-bottom: 30px;">
+    <div class="card">📄 Orçamento</div>
+    <div class="card">🔧 Manutenção</div>
+    <div class="card">🔌 Instalação</div>
+    <div class="card">🧼 Limpeza</div>
+</div>
 
+<h3>Solicitar Atendimento</h3>
+<?php echo $msg; ?>
 
-<form action="?pg=tipodeservico-incluir" method="post">
+<form action="?pg=tipodeservico" method="post">
+    <label>Seu Nome:</label>
+    <input type="text" name="nomecliente" required>
 
-    <label>Nome:</label>
-    <input type="text" name="nomecliente"><br>
-    <label>Telefone:</label>
-    <input type="text" name="telefoneservico"><br>
-    <label>Localização:</label>
-    <input type="text" name="localizacao"><br>
-    <label>Tipo de serviço:</label>
-    <input type="text" name="servicco"><br>
-    <input type="submit" value="Enviar">
+    <label>Telefone para Contato:</label>
+    <input type="tel" name="telefoneservico" required>
 
+    <label>Localização (Cidade/Bairro):</label>
+    <input type="text" name="localizacao" required>
+
+    <label>Qual serviço deseja?</label>
+    <select name="servicco" style="width:100%; padding:10px; margin-top:5px; border:1px solid #ccc; border-radius:4px;">
+        <option value="Orcamento">Orçamento Novo Sistema</option>
+        <option value="Manutencao">Manutenção/Reparo</option>
+        <option value="Limpeza">Limpeza de Placas</option>
+        <option value="Outro">Outro</option>
+    </select>
+
+    <input type="submit" value="Solicitar Serviço">
 </form>
-
-<?php echo '<a href="index.php"> Voltar para o menu</a>';?>
