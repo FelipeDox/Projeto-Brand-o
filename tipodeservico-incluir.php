@@ -1,74 +1,48 @@
 <?php
-// envia-form.php
-// Processa o formulário de contato e salva os dados em um arquivo JSON.
 
-// Verifica se o método é POST para garantir que o formulário foi enviado
-if ($_SERVER["REQUEST_METHOD"] != "POST") {
-    // Redireciona de volta ou exibe uma mensagem de erro se o acesso for direto
-    header("Location: ?pg=tipodeservico");
-    exit();
-}
+$tipodeservico_json = "fornecedor.json";
 
-// 1. Definição do arquivo de dados
-$arquivo_json = 'tiposdeservico.json';
+$nome = $_POST['nomecliente'];
+$telefone = $_POST['telefoneservico'];
+$tipodeservico = $_POST['servicco'];
+$localizacao = $_POST['localizacao'];
 
-// 2. Limpeza e Validação de Dados (Boas Práticas)
-$nome = htmlspecialchars(trim($_POST['nomecliente'] ?? ''));
-$email = htmlspecialchars(trim($_POST['telefoneservico'] ?? ''));
-$mensagem = htmlspecialchars(trim($_POST['servicco'] ?? ''));
-$telefone = htmlspecialchars(trim($_POST['telefoneservico'] ?? ''));
-$localizacao = htmlspecialchars(trim($_POST['localizacao'] ?? ''));
+if(file_exists($tipodeservico_json)){
 
+    $json = file_get_contents($tipodeservico_json);
+    $tipodeservicos = json_decode($json, true);
 
-// Verificação simples
-if (empty($nome) || empty($email) || empty($mensagem) || empty($telefone)) {
-    // Exibe a mensagem de erro (O ideal seria redirecionar com uma mensagem de erro)
-    die("❌ Erro: Todos os campos são obrigatórios.");
-}
-
-// 3. Leitura dos dados existentes
-$contatos = [];
-if (file_exists($arquivo_json)) {
-    $json = file_get_contents($arquivo_json);
-    $dados_existentes = json_decode($json, true);
-
-    if (is_array($dados_existentes)) {
-        $contatos = $dados_existentes;
+    if($tipodeservicos == null || !is_array($tipodeservicos)){
+        $tipodeservicos = [];
     }
-}
+    
+$novo_id = count($tipodeservicos) + 1;
+$novo_tipodeservico = [
 
-// 4. Criação do novo contato
-$novo_contato = [
-    'data' => date("Y-m-d H:i:s"),
-    'nome' => $nome,
-    'email' => $email,
-    'telefone' => $telefone,
-    'Tipo de Serviço' => $mensagem,
-    'Localização' => $localizacao
+    "id" => $novo_id,
+    "nome" => $nome,
+    "telefone" => $telefone,
+    "tipodeservico" => $tipodeservico,
+    "localizacao" => $localizacao
 ];
 
-// 5. Adiciona o novo contato ao array
-$contatos[] = $novo_contato;
 
-// 6. Grava no arquivo
-// JSON_PRETTY_PRINT é opcional, mas ajuda na leitura do arquivo
-$sucesso = file_put_contents($arquivo_json, json_encode($contatos, JSON_PRETTY_PRINT));
+$tipodeservicos[] = $novo_tipodeservico;
 
+$novo_tipodeservico = json_encode($tipodeservicos, JSON_UNESCAPED_UNICODE, JSON_PRETTY_PRINT);
 
-// 7. Feedback para o usuário (inclui topo e rodapé para exibir corretamente)
-include_once "topo.php";
-include_once "menu.php";
+if(file_put_contents($tipodeservico_json, $novo_tipodeservico)){
 
-if ($sucesso !== false) {
-    // Bloco de SUCESSO
-    echo "<h2>🎉 Contato Enviado com Sucesso!</h2>";
-    echo "<p style='color: green; font-weight: bold;'>✅ Obrigado pelo contato, **$nome**!</p>";
-    echo "<p>Recebemos sua mensagem: **'$mensagem'**. Entraremos em contato através do email: **$email** ou telefone: **$telefone** em breve.</p>";
-} else {
-    // Bloco de FALHA
-    echo "<h2>😢 Erro ao Enviar</h2>";
-    echo "<p style='color: red; font-weight: bold;'>❌ Erro ao enviar mensagem. Por favor, tente novamente mais tarde.</p>";
+echo "<p>Serviço $tipodeservico solicitado com sucesso.</p>";
+echo "<p><a href='index.php'>Voltar ao Inicio</p>";
+}
+else{
+    echo "<h2>Erro ao enviar formulário.</h2>";
+    echo "<p><a href='index.php'>Voltar ao Inicio</p>";
+
 }
 
-include_once "rodape.php";
+
+}
+
 ?>
