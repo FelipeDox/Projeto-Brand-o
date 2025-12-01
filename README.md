@@ -11,9 +11,9 @@ Ao acessar o site, o usuário tem acesso a diversas funcionalidades distribuída
 Nessa área, fornecedores podem registrar-se na plataforma, enquanto clientes podem localizar e selecionar os serviços disponibilizados.
 Após o registro, o usuário é automaticamente direcionado para a interface de cadastro, onde todos os dados inseridos são devidamente armazenados e estruturados em nosso banco de dados. Com isso, o cliente passa a visualizar os serviços ofertados pelo fornecedor e pode estabelecer contato de forma direta e integrada ao sistema.
 
-Por fim, realizamos o polimento do site, aprimorando sua estética e proporcionando uma experiência visualmente agradável ao usuário. Para isso, utilizamos como referência layouts e elementos presentes em sites do segmento de energia solar
+Por fim, realizamos o polimento do site, aprimorando sua estética e proporcionando uma experiência visualmente agradável ao usuário. Para isso, utilizamos como referência layouts e elementos presentes em sites do segmento de energia solar.
 
-
+Na parte do BACK-END, foi revisado a parte dos códigos que compõem a entrada de dados, pois foram identificados bugs de indexação nas páginas que recolhiam os dados do usuário, tais dados ão estavam sendo encaminhados para seus devidos campos, assim, ocasionando perca de dados ou falha do site. Com os bugs resolvidos e devidos teste feitos, a equipe fez uma nova revisão, assim, não encontrando bugs ou pendências de desempenho do site.
  
 Integrantes
 
